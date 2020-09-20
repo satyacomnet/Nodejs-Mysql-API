@@ -2,15 +2,13 @@
 const sql = require('./dbconfig');
 
 
-async function getUsers(req , res){
+async function getUsers(){
 
     try{
         let users=await sql.query("Select * from users",(request, response)=>{
-            res.json(response);
+            console.log(response);
         });   
         
-         return users;
-
     }
     catch(error){
        console.log(error);
